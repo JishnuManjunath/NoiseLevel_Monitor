@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/no_noise_83725">
+
+    <!-- Previous elements remain the same until the buttons -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeMinTextSize="20sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:ellipsize="none"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="SOUND ESTIMATOR"
+        android:textColor="#0000ff"
+        android:textSize="55sp"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="bold"/>
+
+    <SurfaceView
+        android:id="@+id/audio_visualizer"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/noise_level_text"
+        android:layout_marginTop="443dp"
+        android:background="@android:color/transparent" />
+
+    <TextView
+        android:id="@+id/noise_level_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Decibel Level: 0 dB"
+        android:textSize="35sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:textColor="#0000FF"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/study_suitability_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/noise_level_text"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:textStyle="bold"/>
+
+    <!-- Recording buttons remain the same -->
+    <LinearLayout
+        android:id="@+id/start_recording_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="?attr/selectableItemBackground"
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_below="@id/study_suitability_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="280dp">
+
+        <ImageView
+            android:id="@+id/record_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/record_button"
+            android:contentDescription="@string/start_recording" />
+
+        <TextView
+            android:id="@+id/start_recording_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Listening"
+            android:layout_marginStart="8dp"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/stop_recording_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="?attr/selectableItemBackground"
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_below="@id/start_recording_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="280dp"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/stop_image"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/stop_button"
+            android:contentDescription="@string/stop_recording" />
+        <TextView
+            android:id="@+id/stop_recording_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop Recording"
+            android:layout_marginStart="8dp"
+            android:textSize="20sp"
+            android:textColor="#FF0000"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Updated navigation buttons with better styling -->
+    <LinearLayout
+        android:id="@+id/navigation_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="2"
+        android:paddingHorizontal="16dp">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="Back"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:padding="12dp"
+            android:backgroundTint="#2196F3"
+            android:textColor="#FFFFFF"
+            android:elevation="4dp"/>
+
+        <Button
+            android:id="@+id/view_history_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="History"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:padding="12dp"
+            android:backgroundTint="#2196F3"
+            android:textColor="#FFFFFF"
+            android:elevation="4dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

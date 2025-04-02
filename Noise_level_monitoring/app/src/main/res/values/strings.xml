@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Noise_level_monitor</string>
+    <string name="stop_recording" />
+    <string name="start_recording" />
+</resources>
